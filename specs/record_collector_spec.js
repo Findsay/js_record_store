@@ -10,7 +10,7 @@ describe("Record Store", function(){
     recordStore = new RecordStore("Fopp", "Glasgow");
     record = new Record("Brand New", "Science Fiction", "Rock", 9.99);
     record2 = new Record("Of Monsters and Men", "Crystals", "Folk Rock", 8.99);
-    recordCollector = new RecordCollector();
+    recordCollector = new RecordCollector(30.00);
   });
 
   it("should have a record collection that starts empty", function(){
@@ -24,6 +24,9 @@ describe("Record Store", function(){
     recordCollector.buy(record);
     recordCollector.sell(record);
     assert.strictEqual(recordCollector.collection.length, 0);
+  });
+  it("should have cash", function(){
+    assert.strictEqual(recordCollector.cash, 30.00);
   });
   it("should have cash that increase and decreases with buying and selling");
   it("shouldn't be able to buy a Record if they can't afford it");

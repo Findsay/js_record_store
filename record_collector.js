@@ -1,6 +1,7 @@
 var _ = require("lodash");
 
-var RecordCollector = function(){
+var RecordCollector = function(cash){
+  this.cash = cash;
   this.collection = [];
 };
 
