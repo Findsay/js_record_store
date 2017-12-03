@@ -16,4 +16,15 @@ describe("Record Store", function(){
   it("should have a record collection that starts empty", function(){
     assert.strictEqual(recordCollector.collection.length, 0);
   });
+  it("should be able to buy records");
+  it('should be able to sell records');
+  it("should have cash that increase and decreases with buying and selling");
+  it("shouldn't be able to buy a Record if they can't afford it");
+  it("should be able to view the total value of their collection");
+  it("should be able to view the total value of all records of a given Genre");
+  it("should be able to view their most valuable record");
+  it("should be able to sort their records by value");
+  it("should be able to compare the value of their collection with another RecordCollector");
+
+
 })
