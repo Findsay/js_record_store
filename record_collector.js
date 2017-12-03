@@ -7,7 +7,8 @@ var RecordCollector = function(cash){
 
 RecordCollector.prototype = {
   buy: function(record){
-    this.collection.push(record);
+  this.cash = (this.cash - record.price).toFixed(2);
+  this.collection.push(record);
   },
   sell: function(record){
     this.collection = _.reject(this.collection, record);
