@@ -7,8 +7,13 @@ var RecordCollector = function(cash){
 
 RecordCollector.prototype = {
   buy: function(record){
-  this.cash = Math.round(this.cash - record.price);
-  this.collection.push(record);
+    if (this.cash >= record.price){
+      this.cash = Math.round(this.cash - record.price);
+      this.collection.push(record);
+    }else{
+      return "Sorry you can't afford this";
+    }
+
   },
   sell: function(record){
     this.cash += Math.round(record.price);
