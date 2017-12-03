@@ -7,13 +7,13 @@ describe("Record Store", function(){
   var record, record2;
 
   beforeEach(function(){
-    recordStore = new RecordStore("Flopp", "Glasgow");
+    recordStore = new RecordStore("Fopp", "Glasgow");
     record = new Record("Brand New", "Science Fiction", "Rock", 9.99);
     record2 = new Record("Of Monsters and Men", "Crystals", "Folk Rock", 8.99);
   });
 
   it("should have a name", function(){
-    assert.strictEqual(recordStore.name, "Flopp");
+    assert.strictEqual(recordStore.name, "Fopp");
   });
   it("should have a city", function(){
     assert.strictEqual(recordStore.city, "Glasgow");
