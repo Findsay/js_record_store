@@ -42,7 +42,11 @@ describe("Record Store", function(){
     recordCollector.buy(record);
     assert.strictEqual(recordCollector.value(), 9.99);
   });
-  it("should be able to view the total value of all records of a given Genre");
+  it("should be able to view the total value of all records of a given Genre", function(){
+    recordCollector.buy(record);
+    recordCollector.buy(record2);
+    assert.strictEqual(recordCollector.valueByGenre("Folk Rock"), 8.99);
+  });
   it("should be able to view their most valuable record");
   it("should be able to sort their records by value");
   it("should be able to compare the value of their collection with another RecordCollector");

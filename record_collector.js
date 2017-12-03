@@ -20,6 +20,9 @@ RecordCollector.prototype = {
   },
   value: function(){
     return _.sumBy(this.collection, "price");
+  },
+  valueByGenre: function(genre){
+    return _.sumBy(_.filter(this.collection, ['genre', genre]), "price");
   }
 }
 
