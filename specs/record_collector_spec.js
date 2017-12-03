@@ -38,7 +38,10 @@ describe("Record Store", function(){
     poorRC = new RecordCollector(0);
     assert.strictEqual(poorRC.buy(record), "Sorry you can't afford this");
   });
-  it("should be able to view the total value of their collection");
+  it("should be able to view the total value of their collection", function(){
+    recordCollector.buy(record);
+    assert.strictEqual(recordCollector.value(), 9.99);
+  });
   it("should be able to view the total value of all records of a given Genre");
   it("should be able to view their most valuable record");
   it("should be able to sort their records by value");

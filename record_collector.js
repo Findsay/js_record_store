@@ -13,11 +13,13 @@ RecordCollector.prototype = {
     }else{
       return "Sorry you can't afford this";
     }
-
   },
   sell: function(record){
     this.cash += Math.round(record.price);
     this.collection = _.reject(this.collection, record);
+  },
+  value: function(){
+    return _.sumBy(this.collection, "price");
   }
 }
 
