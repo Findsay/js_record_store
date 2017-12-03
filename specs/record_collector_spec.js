@@ -20,7 +20,11 @@ describe("Record Store", function(){
     recordCollector.buy(record);
     assert.strictEqual(recordCollector.collection.length, 1);
   });
-  it('should be able to sell records');
+  it('should be able to sell records', function(){
+    recordCollector.buy(record);
+    recordCollector.sell(record);
+    assert.strictEqual(recordCollector.collection.length, 0);
+  });
   it("should have cash that increase and decreases with buying and selling");
   it("shouldn't be able to buy a Record if they can't afford it");
   it("should be able to view the total value of their collection");

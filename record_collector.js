@@ -1,3 +1,5 @@
+var _ = require("lodash");
+
 var RecordCollector = function(){
   this.collection = [];
 };
@@ -5,6 +7,9 @@ var RecordCollector = function(){
 RecordCollector.prototype = {
   buy: function(record){
     this.collection.push(record);
+  },
+  sell: function(record){
+    this.collection = _.reject(this.collection, record);
   }
 }
 
