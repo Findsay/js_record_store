@@ -27,7 +27,9 @@ RecordStore.prototype = {
     var inventoryValue = _.sumBy(this.inventory, "price");
     var finance = "Current Balance = "+ this. balance + " Inventory Value = " + inventoryValue;
     return finance;
-
+  },
+  viewByGenre: function(genre){
+    return _.filter(this.inventory, ['genre', genre]);
   }
 };
 

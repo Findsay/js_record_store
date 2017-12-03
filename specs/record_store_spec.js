@@ -44,6 +44,10 @@ describe("Record Store", function(){
     recordStore.add(record);
     recordStore.add(record2);
     assert.strictEqual(recordStore.financials(), "Current Balance = 0 Inventory Value = 18.98");
-
+  }),
+  it("should be able to return all invetory of a give genre", function(){
+    recordStore.add(record);
+    recordStore.add(record2);
+    assert.deepStrictEqual(recordStore.viewByGenre("Rock"), [record]);
   })
 })
