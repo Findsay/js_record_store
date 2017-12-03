@@ -23,5 +23,8 @@ describe("Record Store", function(){
   it("should have a balance that starts at 0", function(){
     assert.strictEqual(recordStore.balance, 0);
   });
-  it('should be able to add records to the inventory');
+  it('should be able to add records to the inventory', function(){
+    recordStore.add(record);
+    assert.strictEqual(recordStore.inventory.length, 1);
+  });
 })
