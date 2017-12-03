@@ -28,10 +28,11 @@ describe("Record Store", function(){
     recordStore.add(record);
     assert.strictEqual(recordStore.inventory.length, 1);
   });
-  xit("should be able to list the inventory", function(){
+  it("should be able to list the inventory", function(){
     recordStore.add(record);
     recordStore.add(record2);
-    
-
-  })
+    var inventory = "Brand New - Science Fiction, Of Monsters and Men - Crystals, ";
+    assert.strictEqual(recordStore.getInventoryDetails(), inventory);
+  });
+  it("should be able to sell a record which updates the balance")
 })

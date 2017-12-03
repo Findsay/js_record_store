@@ -8,6 +8,14 @@ var RecordStore = function(name, city){
 RecordStore.prototype = {
   add: function(record){
     this.inventory.push(record);
+  },
+  getInventoryDetails: function(){
+    var inventory = "";
+    this.inventory.forEach(function(record){
+      inventory += record.artist + " - " + record.title + ", ";
+    })
+    return inventory;
+
   }
 };
 
