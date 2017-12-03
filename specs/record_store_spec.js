@@ -11,7 +11,9 @@ describe("Record Store", function(){
     record = new Record("Brand New", "Science Fiction", "Rock", 9.99);
   });
 
-  it("should have a name");
+  it("should have a name", function(){
+    assert.strictEqual(recordStore.name, "Flopp");
+  });
   it("should have a city");
   it("should have an inventory, that starts empty");
   it("should have a balance that starts at 0");
