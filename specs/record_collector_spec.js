@@ -16,7 +16,10 @@ describe("Record Store", function(){
   it("should have a record collection that starts empty", function(){
     assert.strictEqual(recordCollector.collection.length, 0);
   });
-  it("should be able to buy records");
+  it("should be able to buy records", function(){
+    recordCollector.buy(record);
+    assert.strictEqual(recordCollector.collection.length, 1);
+  });
   it('should be able to sell records');
   it("should have cash that increase and decreases with buying and selling");
   it("shouldn't be able to buy a Record if they can't afford it");
