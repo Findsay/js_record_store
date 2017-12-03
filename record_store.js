@@ -1,3 +1,5 @@
+var _ = require("lodash");
+
 var RecordStore = function(name, city){
   this.name = name;
   this.city = city;
@@ -15,7 +17,10 @@ RecordStore.prototype = {
       inventory += record.artist + " - " + record.title + ", ";
     })
     return inventory;
-
+  },
+  sell: function(record){
+    this.balance += record.price;
+    this.inventory = _.reject(this.inventory, record);
   }
 };
 

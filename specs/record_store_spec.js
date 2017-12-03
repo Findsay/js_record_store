@@ -34,5 +34,10 @@ describe("Record Store", function(){
     var inventory = "Brand New - Science Fiction, Of Monsters and Men - Crystals, ";
     assert.strictEqual(recordStore.getInventoryDetails(), inventory);
   });
-  it("should be able to sell a record which updates the balance")
+  it("should be able to sell a record which updates the balance", function(){
+    recordStore.add(record);
+    recordStore.sell(record);
+    assert.strictEqual(recordStore.balance, 9.99);
+    assert.strictEqual(recordStore.inventory.length, 0);
+  })
 })
