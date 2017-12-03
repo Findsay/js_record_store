@@ -21,6 +21,10 @@ describe("Record", function(){
   it("should have a price", function(){
     assert.strictEqual(record.price, 9.99);
   });
+  it("should be able to print out record details as string", function(){
+    var details = "artist: Brand New, title: Science Fiction, genre: Rock, price: 9.99";
+    assert.deepStrictEqual(record.getDetails(), details);
+  });
 
 
 

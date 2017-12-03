@@ -4,11 +4,12 @@ var Record = require("../record");
 
 describe("Record Store", function(){
   var recordStore;
-  var record;
+  var record, record2;
 
   beforeEach(function(){
     recordStore = new RecordStore("Flopp", "Glasgow");
     record = new Record("Brand New", "Science Fiction", "Rock", 9.99);
+    record2 = new Record("Of Monsters and Men", "Crystals", "Folk Rock", 8.99);
   });
 
   it("should have a name", function(){
@@ -27,4 +28,10 @@ describe("Record Store", function(){
     recordStore.add(record);
     assert.strictEqual(recordStore.inventory.length, 1);
   });
+  xit("should be able to list the inventory", function(){
+    recordStore.add(record);
+    recordStore.add(record2);
+    
+
+  })
 })
