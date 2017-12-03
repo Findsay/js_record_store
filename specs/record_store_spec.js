@@ -39,5 +39,11 @@ describe("Record Store", function(){
     recordStore.sell(record);
     assert.strictEqual(recordStore.balance, 9.99);
     assert.strictEqual(recordStore.inventory.length, 0);
+  }),
+  it("should be able to report the financials, show balance and inventory price", function(){
+    recordStore.add(record);
+    recordStore.add(record2);
+    assert.strictEqual(recordStore.financials(), "Current Balance = 0 Inventory Value = 18.98");
+
   })
 })

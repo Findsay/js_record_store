@@ -21,6 +21,13 @@ RecordStore.prototype = {
   sell: function(record){
     this.balance += record.price;
     this.inventory = _.reject(this.inventory, record);
+  },
+  financials: function(){
+    var finance = "";
+    var inventoryValue = _.sumBy(this.inventory, "price");
+    var finance = "Current Balance = "+ this. balance + " Inventory Value = " + inventoryValue;
+    return finance;
+
   }
 };
 
